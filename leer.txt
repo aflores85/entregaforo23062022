@@ -134,3 +134,45 @@ npm run serve
 
 
 IMPORTANTE CREAR LA BASE DE DATOS CON EL NOMBRE forodb EN POSTGRE
+
+# define las relaciones ver documentacion
+# define endpoints a Foro y sus funciones
+#los @ son decoradores ejecutan la funcion y encapsulan la funcion, antes crean el objeto request
+#https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/
+#export FLASK_APP=app
+#flask run
+#curl -X POST http://127.0.0.1:5000/api/v1/newforo -H 'Content-Type: application/json' -d '{"title":"nuevo titulo X","content":"contenido X"}'
+#curl -X POST http://127.0.0.1:5000/api/v1/newsubject -H 'Content-Type: application/json' -d '{"title":"nuevo subject","content":"contenido1","foro_id":"1"}'
+#curl -X POST http://127.0.0.1:5000/api/v1/newpost -H 'Content-Type: application/json' -d '{"title":"nuevo post","content":"contenido1","imageURL":"", "subjectid":"1"}'
+
+# helpers
+# def get_database_uri(prod_or_local):
+ #    with open('config.json') as config_file:
+  #       config = json.load(config_file)
+   #  if prod_or_local == 'prod':
+     #     return config['database']['prod']
+  #   elif prod_or_local == 'local':
+   #      return config['database']['local']
+    # return None
+
+
+    
+create_base = Blueprint('createbase'. __name__)
+
+@create_base.route('/createbase', methods=['POST'])
+def crear_base():
+    create_base.create_all(db)
+    return jsonify({'message': 'Base created successfully'})
+
+
+#los puts
+modificar_foro = Blueprint('modificarforo'. __name__)
+@modificar_foro.route('/api/v1/modificarforo/<id>', methods=['PUT'])
+def put_subject(id):
+    update_foro = Foro.query.filter_by(id=id).first()
+
+    if update_foro is None:
+        return jsonify({'message': 'Foro does not exists'}), 404
+    db.session.update(update_foro)
+    db.session.commit()
+    return jsonify({'message': 'foro fetched successfully'})
