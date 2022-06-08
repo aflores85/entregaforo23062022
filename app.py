@@ -6,13 +6,8 @@ from venv import create
 from flask_cors import CORS # por seguridad Cros Origin
 
 # initialize app
+
 app = Flask(__name__) #creamos el objeto, un servidor web, responde peticiones de request
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:admin@localhost:5432/forodb" # conexion a la base 
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://cjbntwlxqcxuqv:acbed88d66591c93b084bc6393f11ee95f3106b45f655672cafc3fa119c03755@ec2-34-225-159-178.compute-1.amazonaws.com:5432/d3vkm95ntvr4ni" # conexion a la base
