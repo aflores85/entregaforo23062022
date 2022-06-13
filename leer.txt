@@ -1,7 +1,7 @@
 proyecto el Flask, SQL Alchemy, Vue JS y la parte de Quasar esta sin terminar
 
 Pasos previos 
-1-IMPORTANTE CREAR LA BASE DE DATOS CON EL NOMBRE forodb EN POSTGRE
+1-IMPORTANTE CREAR LA BASE DE DATOS CON EL NOMBRE forodb EN POSTGRE (usuario admin, clave admin)
 2-export FLASK_APP=app
 3-flask run
 4- npm run serve 
