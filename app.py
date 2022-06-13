@@ -143,5 +143,19 @@ def delete_subject(id):
 
 
 
+@app.route('/api/v1/updateforo', methods=['PUT'])
+def update_foro():
+    id: request.form['id']
+    title: request.form['title']
+    content:request.form['content']
+
+    query_update_foro = Foro.query.filter_by(id=id).one()
+    if query_update_foro is None:
+        return jsonify({'message': 'Foro does not exists'}), 404
+
+    db.session.update(query_update_foro)
+    db.session.commit()
+    return jsonify({'message': 'Foro update fetched successfully'})
+
 db.create_all()
 
