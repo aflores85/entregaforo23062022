@@ -107,15 +107,14 @@ def get_subject():
 
 @app.route('/api/v1/getPosts', methods=['GET'])
 def get_posts():
-    # current_app.logger.info('request')
-    posts = Post.query.all()
+    posts_query = Post.query.all()
     posts_list = []
-    for post in posts:
+    for posts in posts_query:
         posts_list.append(
-            {'title': post.title,
-             'id': post.id,
-             'content': post.content,
-             'image': post.image_url
+            {'title': posts.title,
+             'id': posts.id,
+             'content': posts.content,
+             'image': posts.image_url
              })
     return jsonify({'posts': posts_list, 'message': 'Posts fetched successfully'})
 

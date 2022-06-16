@@ -42,7 +42,7 @@ import FormForo from "../components/FormForo";
 import FormSubject from "../components/FormSubject";
 import ListaSubject from "../components/ListaSubject";
 import Contacto from "../components/Contacto";
-import Posts from "../components/ListaPosts";
+import ListaPosts from "../components/ListaPosts";
 import FormPosts from "../components/FormPosts";
 
 
@@ -51,7 +51,7 @@ import FormPosts from "../components/FormPosts";
 
 export default {
   name: "InicioView",
-  components: { HolaMundoComp, ListaForos, FormForo, FormSubject, ListaSubject, Contacto, Posts, FormPosts },
+  components: { HolaMundoComp, ListaForos, FormForo, FormSubject, ListaSubject, Contacto, ListaPosts, FormPosts },
     
 };
 </script>
