@@ -1,4 +1,6 @@
+
 <template>
+<header style="text-align:center;">
   <div class="contact">
     <h3 class="title">Contacto</h3>
     <form action class="form" submit.prevent="contact">
@@ -22,8 +24,8 @@
       <input class="form-submit" type="submit" value="Contactar">
     </form>
   </div>
+</header>
 </template>
-
 <script>
 export default {
   data: () => ({
