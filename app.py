@@ -103,7 +103,7 @@ def get_subject():
              'content': subject.content,
              'foro_id': subject.foro_id
             })
-    return jsonify({'Subject': subject_list, 'message': 'subject fetched successfully'})
+    return jsonify({'Subject': subject_list, 'message': 'subject fetched successfully'}), "default limit 50"
 
 @app.route('/api/v1/getPosts', methods=['GET'])
 def get_posts():

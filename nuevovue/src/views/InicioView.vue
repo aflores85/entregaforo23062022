@@ -9,8 +9,12 @@
   <form-foro></form-foro>
   <h3> Dar de alta Tema en el Foro </h3>
   <Form-Subject></Form-Subject>
-  <h4 style="background-color:darkolivegreen"> <lista-foros></lista-foros></h4>
+  <h4> Dar de alta un Posts </h4>
+  <form-posts></form-posts>
+
+  <h5 style="background-color:darkolivegreen"> <lista-foros></lista-foros></h5>
   <Lista-Subject style="background-color:darkgrey"></Lista-Subject>
+  <h5 style="background-color:darkgrey">Lista de Posts</h5> <Lista-Posts></Lista-Posts>
     <Contacto></Contacto>  
   </div>
   
@@ -26,13 +30,16 @@ import FormForo from "../components/FormForo";
 import FormSubject from "../components/FormSubject";
 import ListaSubject from "../components/ListaSubject";
 import Contacto from "../components/Contacto";
+import Posts from "../components/ListaPosts";
+import FormPosts from "../components/FormPosts";
+
 
 
 
 
 export default {
   name: "InicioView",
-  components: { HolaMundoComp, ListaForos, FormForo, FormSubject, ListaSubject, Contacto },
+  components: { HolaMundoComp, ListaForos, FormForo, FormSubject, ListaSubject, Contacto, Posts, FormPosts },
     
 };
 </script>

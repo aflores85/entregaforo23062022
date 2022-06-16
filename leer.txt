@@ -9,7 +9,7 @@ e ingresar al link para probar el foro
 se genero un alta de foro y un alta de tema del foro
 se listan los foros creados y los temas creados
 intente subirlo a Heroku pero me dio errores y los videos que vi en internet me confunden mas.
-
+5-Quasar dev, estoy terminando de hacerlo para quasar
 
 utilice esta documentacion y curls de pruebas
 #https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/
