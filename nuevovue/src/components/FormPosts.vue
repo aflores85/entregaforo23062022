@@ -4,7 +4,8 @@
       <input type="text" v-model="title" placeholder="Ingrese Titulo del Posts" />
       <input type="text" v-model="content" placeholder="Ingrese contenido del Posts"/>
       <input type="text" v-model="Subject_id" placeholder="Ingrese el id del Tema"/>
-      <button type="submit">Nuevo Posts</button>
+      <input type="text" v-model="image_url" placeholder="Ingrese el id del Tema"/>
+    <button type="submit">Nuevo Posts</button>
     </form>
   </div>
 </template>
@@ -17,6 +18,7 @@ export default {
       title: "",
       content: "",
       Subject_id:"",
+      image_url:"",
     };
   },
   methods: {
@@ -30,6 +32,7 @@ export default {
           title: this.title,
           content: this.content,
           Subject_id:this.Subject_id,
+          image_url:this.image_url,
         }),
       })
         .then((response) => response.json())

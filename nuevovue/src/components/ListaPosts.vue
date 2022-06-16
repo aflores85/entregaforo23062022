@@ -1,8 +1,8 @@
 <template>
   <div>
     <h3>Listado de Posts</h3>
-  <ul v-for="(Posts, index) in Posts" :key="index">
-    <li>Identificador :{{ Posts.id }}, Nombre del Posts: {{ Posts.content }}, Relacionado con Tema: {{ Posts.foro_id }}</li>
+  <ul v-for="(posts, index) in posts" :key="index">
+    <li>Identificador :{{ posts.id }}, Nombre del Posts: {{ posts.content }}</li>
   </ul>
   </div>
 </template>
@@ -12,20 +12,20 @@ export default {
   name: "ListaPosts",
   data() {
     return {
-      Posts: [],
+      posts: [],
     };
   },
   methods: {
-    getPosts() {
+    GetPosts() {
       fetch("http://localhost:5000/api/v1/getPosts")
         .then((response) => response.json())
         .then((data) => {
-          this.Posts = data.Posts;
+          this.posts = data.posts;
         });
     },
   },
   mounted() {
-    this.getPosts();
+    this.GetPosts();
   },
 };
 </script>

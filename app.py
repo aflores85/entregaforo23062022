@@ -73,8 +73,8 @@ def new_subject():
 def new_post():
     post_to_create = Post(title=request.json['title'],
                           content=request.json['content'],
-                          image_url=request.json['imageURL'],
-                          subject_id=request.json['subjectid'])
+                          image_url=request.json['image_url'],
+                          subject_id=request.json['Subject_id'])
 
     db.session.add(post_to_create)
     db.session.commit()
@@ -103,7 +103,7 @@ def get_subject():
              'content': subject.content,
              'foro_id': subject.foro_id
             })
-    return jsonify({'Subject': subject_list, 'message': 'subject fetched successfully'}), "default limit 50"
+    return jsonify({'Subject': subject_list, 'message': 'subject fetched successfully'})
 
 @app.route('/api/v1/getPosts', methods=['GET'])
 def get_posts():

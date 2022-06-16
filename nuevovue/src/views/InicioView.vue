@@ -9,14 +9,26 @@
   <form-foro></form-foro>
   <h3> Dar de alta Tema en el Foro </h3>
   <Form-Subject></Form-Subject>
-  <h4> Dar de alta un Posts </h4>
+  <h4> Dar de alta un Posts en un tema </h4>
   <form-posts></form-posts>
 
-  <h5 style="background-color:darkolivegreen"> <lista-foros></lista-foros></h5>
-  <Lista-Subject style="background-color:darkgrey"></Lista-Subject>
-  <h5 style="background-color:darkgrey">Lista de Posts</h5> <Lista-Posts></Lista-Posts>
+  <div>
+    <lista-foros></lista-foros>
+  </div>
+  
+  <div>
+    <Lista-Subject></Lista-Subject>
+  </div>
+  
+  <div>
+    <Lista-Posts></Lista-Posts>  
+  </div>
+
+  <div>
     <Contacto></Contacto>  
   </div>
+  
+</div>
   
 
 
