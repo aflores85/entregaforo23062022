@@ -4,16 +4,47 @@ from flask_cors import CORS # por seguridad Cros Origin
 from flask import Blueprint 
 from venv import create
 from flask_cors import CORS # por seguridad Cros Origin
+from flasgger import Swagger, LazyString, LazyJSONEncoder
+from flasgger import swag_from
+
+
 
 # initialize app
 
 app = Flask(__name__) #creamos el objeto, un servidor web, responde peticiones de request
+app.json_encoder = LazyJSONEncoder
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:admin@localhost:5432/forodb" # conexion a la base 
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://cjbntwlxqcxuqv:acbed88d66591c93b084bc6393f11ee95f3106b45f655672cafc3fa119c03755@ec2-34-225-159-178.compute-1.amazonaws.com:5432/d3vkm95ntvr4ni" # conexion a la base
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+swagger_template = dict(
+info = {
+    'title': LazyString(lambda: 'Swagger UI document'),
+    'version': LazyString(lambda: '0.1'),
+    'description': LazyString(lambda: 'Document and implements functionality.'),
+    },
+    host = LazyString(lambda: request.host)
+)
+swagger_config = {
+    "headers": [],
+    "specs": [
+        {
+            "endpoint": 'Doc',
+            "route": '/apidocs/',
+            "rule_filter": lambda rule: True,
+            "model_filter": lambda tag: True,
+        }
+    ],
+    "static_url_path": "/flasgger_static",
+    "swagger_ui": True,
+    "specs_route": "/apidocs/"
+}
+
+swagger = Swagger(app, template=swagger_template,             
+                  config=swagger_config)
 
 class Foro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -56,6 +87,9 @@ def new_foro():
     db.session.add(foro_to_create)
     db.session.commit()
     return jsonify({'message': 'Foro created successfully'})
+
+
+
 
 
 @app.route('/api/v1/newsubject', methods=['POST'])
