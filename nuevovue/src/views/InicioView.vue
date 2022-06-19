@@ -1,10 +1,12 @@
 
 <template>
   <div>
+
+ <header style="text-align:center;">
  
-  <header style="text-align:center;">
   <hola-mundo-comp></hola-mundo-comp>
   </header>
+   
     <h2> Dar de alta Foro </h2>
   <form-foro></form-foro>
   <h3> Dar de alta Tema en el Foro </h3>
@@ -28,11 +30,7 @@
     <Contacto></Contacto>  
   </div>
   
-</div>
-  
-
-
-</template>
+</div></template>
 
 
 <script>
@@ -44,9 +42,6 @@ import ListaSubject from "../components/ListaSubject";
 import Contacto from "../components/Contacto";
 import ListaPosts from "../components/ListaPosts";
 import FormPosts from "../components/FormPosts";
-
-
-
 
 
 export default {
