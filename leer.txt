@@ -1,3 +1,4 @@
+TP FLores juan Andres Flores para la cursada de FullStack 2022 Profesor Gabriel Barrera
 proyecto el Flask, SQL Alchemy, Vue JS y la parte de Quasar esta sin terminar
 
 Pasos previos 
