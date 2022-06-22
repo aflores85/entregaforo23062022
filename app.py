@@ -1,3 +1,4 @@
+from time import sleep
 from flask import Flask, request, jsonify  # diccionarios de python los convienrte en Json y en response, objeto request
 from flask_sqlalchemy import SQLAlchemy # libreria para BBDD - ORM mapeos de objetos a una base Relacional
 from flask_cors import CORS # por seguridad Cros Origin
@@ -6,6 +7,7 @@ from venv import create
 from flask_cors import CORS # por seguridad Cros Origin
 from flasgger import Swagger, LazyString, LazyJSONEncoder
 from flasgger import swag_from
+from sqlalchemy import null
 
 
 
@@ -46,6 +48,7 @@ swagger_config = {
 swagger = Swagger(app, template=swagger_template,             
                   config=swagger_config)
 
+
 class Foro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
@@ -82,14 +85,14 @@ class Post(db.Model):
 def new_foro():
     foro_to_create = Foro(title=request.json['title'],
                           content=request.json['content']
-                                                        )
-
-    db.session.add(foro_to_create)
-    db.session.commit()
+                                                         )
+    if foro_to_create is None:
+        return jsonify({'message': 'Por favor complete el titulo'}), 404 
+    else:
+        db.session.add(foro_to_create)
+        db.session.commit()
     return jsonify({'message': 'Foro created successfully'})
-
-
-
+    
 
 
 @app.route('/api/v1/newsubject', methods=['POST'])
@@ -116,6 +119,7 @@ def new_post():
 
 @app.route('/api/v1/getforo', methods=['GET'])
 def get_foro():
+    
     foros_Query = Foro.query.all() 
     foros_list = []
     for foros in foros_Query:

@@ -9,6 +9,17 @@
 </template>
 
 <script>
+
+import ListaForosVue from './ListaForos.vue';
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 export default {
   name: "formForo",
   data() {
@@ -31,7 +42,10 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
+        sleep(30000)
           console.log(data);
+          ListaForosVue.methods.getForos();
+        
         });
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Listado de Foros Activos</h1>
+    <h2>Listado de Foros Activos</h2>
   <ul v-for="(foro, index) in foros" :key="index">
     <li>Identificador: {{ foro.id }},Titulo del Foro: {{ foro.content }}</li>
   </ul>
