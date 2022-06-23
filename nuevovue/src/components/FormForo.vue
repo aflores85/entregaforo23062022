@@ -42,7 +42,7 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-        sleep(30000)
+
           console.log(data);
           ListaForosVue.methods.getForos();
         
