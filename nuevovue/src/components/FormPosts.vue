@@ -4,7 +4,7 @@
       <input type="text" v-model="title" placeholder="Ingrese Titulo del Posts" />
       <input type="text" v-model="content" placeholder="Ingrese contenido del Posts"/>
       <input type="text" v-model="Subject_id" placeholder="Ingrese el id del Tema"/>
-      <input type="text" v-model="image_url" placeholder="Ingrese el id del Tema"/>
+      <input type="text" v-model="image_url" placeholder="Ingrese la url de una imagen"/>
     <button type="submit">Nuevo Posts</button>
     </form>
   </div>

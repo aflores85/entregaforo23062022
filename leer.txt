@@ -5,7 +5,9 @@ Pasos previos
 1-IMPORTANTE CREAR LA BASE DE DATOS CON EL NOMBRE forodb EN POSTGRE (usuario admin, clave admin)
 2-export FLASK_APP=app
 3-flask run
-4- npm run serve 
+4-npm install
+4.1- npm run serve 
+
 e ingresar al link para probar el foro
 se genero un alta de foro y un alta de tema del foro
 se listan los foros creados y los temas creados

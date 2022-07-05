@@ -7,27 +7,28 @@
 <hola-mundo-comp></hola-mundo-comp>
 
 </header>
-   
-  <h2> Dar de alta Foro </h2><form-foro></form-foro>
-  <h3> Dar de alta Tema en el Foro </h3><Form-Subject></Form-Subject>
-  <h4> Dar de alta un Posts en un tema </h4><form-posts></form-posts>
+<table bordercolor = "#999933" border="8" cellpadding="1" cellspacing="1" tyle="width:100%"> 
+  <tr>
+  <td><h2> Dar de alta Foro </h2><form-foro></form-foro></td>
+  <td><h3> Dar de alta Tema en el Foro </h3><Form-Subject></Form-Subject></td>
+  <td> <h4> Dar de alta un Posts en un tema </h4><form-posts></form-posts></td>
+ </tr>
+</table>
+<body>  
 
-  <div>
-    <lista-foros></lista-foros>
-  </div>
+<table  style="width:100%"> 
+  <tr>
+  <td><div><lista-foros></lista-foros></div></td>
+  <td><div><Lista-Subject></Lista-Subject></div></td>
+  <td><div><Lista-Posts></Lista-Posts></div></td>
+  </tr>
+</table>
   
-  <div>
-    <Lista-Subject></Lista-Subject>
-  </div>
-  
-  <div>
-    <Lista-Posts></Lista-Posts>  
-  </div>
+  <div><Contacto></Contacto></div>
+ 
+ 
 
-  <div>
-    <Contacto></Contacto>  
-  </div>
-  
+</body>  
 </div></template>
 
 
@@ -50,4 +51,3 @@ export default {
 </script>
 
 <style scoped></style>
-

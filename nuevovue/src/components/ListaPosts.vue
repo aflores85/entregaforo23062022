@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Listado de Posts</h3>
+    <h4>Listado de Posts</h4>
   <ul v-for="(posts, index) in posts" :key="index">
     <li>Identificador :{{ posts.id }}, Nombre del Posts: {{ posts.content }}</li>
   </ul>
@@ -29,4 +29,9 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style type="text/css">
+    table, th, td {
+      border:1px solid black;
+
+    }
+</style>

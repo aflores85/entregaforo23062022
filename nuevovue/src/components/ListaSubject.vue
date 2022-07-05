@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>Listado de temas</h3>
+    <h4>Listado de temas</h4>
+ 
   <ul v-for="(Subject, index) in Subject" :key="index">
     <li>Identificador :{{ Subject.id }}, Nombre del tema: {{ Subject.content }}, Relacionado con Foro: {{ Subject.foro_id }}</li>
   </ul>
@@ -29,4 +30,15 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style type="text/css">
+    table, th, td {
+      border:1px solid black;
+      }
+      th, td {
+        padding: 15px;
+      }
+
+      th{
+        text-align: center;
+      }
+</style>

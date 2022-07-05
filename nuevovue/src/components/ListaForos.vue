@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>Listado de Foros Activos</h2>
+    <h4>Listado de Foros Activos</h4>
+      
+
   <ul v-for="(foro, index) in foros" :key="index">
     <li>Identificador: {{ foro.id }},Titulo del Foro: {{ foro.content }}</li>
   </ul>
@@ -30,4 +32,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style type="text/css">
+    table, th, td {
+      border:1px solid black;
+
+    }
+</style>
