@@ -7,7 +7,7 @@ from venv import create
 from flask_cors import CORS # por seguridad Cros Origin
 from flasgger import Swagger, LazyString, LazyJSONEncoder
 from flasgger import swag_from
-from sqlalchemy import null
+from sqlalchemy import Integer, null
 
 
 
@@ -129,6 +129,19 @@ def get_foro():
              'content': foros.content,          
              })
     return jsonify({'foros': foros_list, 'message': 'foros fetched successfully'})
+
+@app.route('/api/v1/getcantidadforo', methods=['GET'])
+def get_cantidad_foro():
+    foros_Cantidad_Query = Foro.query.all.count()
+    foros_list = []
+    for foros in foros_Cantidad_Query:
+        foros_list.append(
+            {'title': foros.title,
+             'id': foros.id,
+             'content': foros.content,          
+             })
+    return jsonify( foros_list.count  )
+    #return jsonify({'cantidadforos': foros_list , 'message': 'getcantidadforo fetched successfully'})
 
 @app.route('/api/v1/getsubject', methods=['GET'])
 def get_subject():    
